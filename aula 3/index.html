@@ -11,17 +11,21 @@
     <main>
        <section>
           <h2>Cadastre seu currículo</h2>
-          <form action="#" method="get">
+          <form action="https://postman-echo.com/post" method="post" enctype="miltipart/form-data">
             <p>Preencha o formulário abaixo para se candidatar à vaga</p>
             <fieldset>
                 <legend>Dados pessoais</legend>
+               <div>
+                <label for="foto_id">Foto:</label>
+                <input id="foto_id" name="foto" type="file" accept="image/*">
+               </div>
                 <div>
                     <label for="nome_id">Nome completo:</label>
-                    <input id="nome_id" name="nome" type="text">
+                    <input id="nome_id" name="nome" type="text" placeholder="Fulano de Tal">
                  </div>
                  <div>
                     <label for="telefone_id">Telefone:</label>
-                    <input id="telefone_id" name="telefone" type="tel"
+                    <input id="telefone_id" name="telefone" type="tel" required>
                  </div>
                  <div>
                     <label for="email_id">Email:</label>
@@ -99,7 +103,7 @@
        </section>
     </main>
     <footer>
-<p>Topdos os direitos reservados</p>
+<p>Todos os direitos reservados</p>
     </footer>
   </body>
 </html>
