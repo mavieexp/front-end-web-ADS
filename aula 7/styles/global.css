@@ -23,13 +23,9 @@ footer{
     margin-top: 3rem;
 }
 
-p {
+footer p {
     margin-top: 1rem;
     padding: 1.5rem;
-}
-
-span {
-    display: block;
 }
 
 label {
@@ -54,11 +50,11 @@ button {
 }
 
 .sucesso {
-    background-color: rgb(216, 224, 247);
+    background-color: rgb(56, 230, 70);
     font-weight: bold;
 }
 
 .erro {
-    color: rgb(3, 3, 66);
-    background-color: rgb(6, 7, 46);
+    color: rgb(255, 0, 0);
+    background-color: rgb(236, 190, 190);
 }
