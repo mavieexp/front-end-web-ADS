@@ -37,22 +37,28 @@ function validarForm() {
     const concluido = document.querySelector("#concluido");
     const valido = document.querySelectorAll(".erro").length === 0;
     
-    if (!valido) {
-        concluido.textContent = "Corrija essas bagaça antes de prosseguir!";
-        concluido.classList.add("erro");
-        concluido.classList.remove("oculto");
-    } else {
-        concluido.textContent = "Certinho mano tamo junto!";
+  
+try {
+
+    const resposta = await fetch("https://postman-echo.com/post", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    });
+
+    if (resposta.ok) {
+        const concluido = document.querySelector("#concluido");
+
+        concluido.textContent = "Enviado com sucesso!";
         concluido.classList.add("sucesso");
         concluido.classList.remove("oculto");
+    } else {
+        alert("Erro ao enviar o formulário!");
     }
-}
 
-//() => {} arrow functions
-function limparForm() {
-    document.querySelectorAll(".erro").forEach((item) => {
-        item.classList.remove("erro");
-        item.classList.add("oculto");
-    });
-    document.querySelector("#concluido").classList.add("oculto");
+} catch (erro) {
+    alert("Erro ao conectar com o servidor!");
+    console.log(erro);
 }
